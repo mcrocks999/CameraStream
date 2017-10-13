@@ -1,7 +1,7 @@
 {
   "name": "camerastream",
   "version": "1.0.0",
-  "description": "A simple experiment to make a PC stream an image to another PC",
+  "description": "A simple experiment to make a PC stream video to another PC",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
