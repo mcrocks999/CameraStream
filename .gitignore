@@ -57,3 +57,7 @@ typings/
 # dotenv environment variables file
 .env
 
+# Node-webcam saves to picture.jpg etc. EXCLUDE IT
+picture.png
+picture.jpg
+picture.jpeg

@@ -16,12 +16,11 @@ function draw() {
 	image.onload = function() {
 		context.drawImage(image, 0, 0);
 	};
-	image.src = 'data:image/png;base64,'+frame;
+	image.src = frame;
 }
 /* main loop */
 function anim() {
 	if (updateFrame) { // we don't want to redraw the frame constantly
-		canvas.width = canvas.width;
 		draw();
 		updateFrame = false;
 	}
@@ -29,7 +28,12 @@ function anim() {
 }
 anim(); // start the loop
 
-/**
- * NOTE!
- * To implement websockets, when recieving base64, simply just call setFrame with the base64 as an argument.
- */
+var socket;
+if(window.location.protocol === "https://") socket = new WebSocket("wss://" + window.location.host + "/ws");
+else socket = new WebSocket("ws://" + window.location.host + "/ws");
+socket.onopen = function() { console.log("Connected to " + socket.url); }
+socket.onclose = function() { console.log("Disconnected from " + socket.url); }
+socket.onmessage = function(message) {
+	let data = JSON.parse(message.data);
+	if(data.type === "image") setFrame(data.data);
+}
