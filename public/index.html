@@ -1,10 +1,32 @@
 <html>
-  <head>
-    <title>CameraStream</title>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <canvas id="canvas" width="352" height="288" style="border: 1px solid black;"></canvas>
-    <script src="index.js"></script>
-  </body>
+    <head>
+        <title>CameraStream</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" integrity="sha256-HEtF7HLJZSC3Le1HcsWbz1hDYFPZCqDhZa9QsCgVUdw=" crossorigin="anonymous" />
+    </head>
+    <body>
+        <section class="section">
+            <div class="container">
+                <div class="box">
+                    <h3 class="title is-3">CameraStream</h3>
+                    <canvas id="canvas" width="352" height="288"></canvas>
+                    <br><br>
+                    <a href="https://github.com/FatalErrorCode/CameraStream">View source on GitHub</a>
+                </div>
+            </div>
+        </section>
+        <script src="index.js"></script>
+    </body>
+    <style>
+        html, body {
+            background-color: #333333;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+        .box {
+            width: 392px;
+            margin: auto;
+        }
+    </style>
 </html>
